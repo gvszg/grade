@@ -1,11 +1,25 @@
 <% content_for :back_class do %>
   <%= link_to 'back_class', year_students_path(@year) %>
+  <%= link_to 'Add new score', new_year_student_state_result_path(@year, @student, @state) %>
 <% end %>
 
 <div>
   <h3><%= @student.name %> Learning Results</h3>
   <hr>
-  <%= @state.results.each do |result| %>
-
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+      <th>科目</th>
+      <th>分數</th>
+      </tr>
+    </thead>
+    <% @state.results.each do |result| %>
+      <tbody>
+        <tr>
+          <td><%= result.subject %></td>
+          <td><%= result.score %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
 </div>

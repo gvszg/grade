@@ -1,0 +1,13 @@
+<% content_for :back_state do %>
+  <%= link_to 'Back State', year_student_states_path %>
+<% end %>
+<hr>
+<div>
+  <%= form_for [@year, @student, @state, @result] do |f| %>
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %><br>
+    <%= f.label :score %><br>
+    <%= f.text_field :score %><br>
+    <%= f.submit %>
+  <% end %>
+</div>

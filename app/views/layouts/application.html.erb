@@ -7,12 +7,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><%= link_to 'Root', root_path %></li>
-      </ul>
+    <nav>  
+      <%= link_to 'Root', root_path %>
+      <%= yield :class_list %>
+      <%= yield :back_class %>
+      <%= yield :back_state %>
     </nav>
-    <%= yield :back_class %>
+    
     <%= yield %>
 
   </body>

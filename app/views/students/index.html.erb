@@ -1,9 +1,8 @@
+<% content_for :class_list do %>
+  <%= link_to 'new student', new_year_student_path(@year) %>
+<% end %>
 <div>
   <h3>Class <%= @year.number %> Students List</h3>
-  <ul >
-    <li><%= link_to 'new student', new_year_student_path(@year) %></li>
-    <li><%= link_to 'back', years_path %></li>
-  </ul>
   <hr>
   <table>
     <thead>
