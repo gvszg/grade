@@ -1,0 +1,11 @@
+<% content_for :back_class do %>
+  <%= link_to 'back_class', year_students_path(@year) %>
+<% end %>
+
+<div>
+  <h3><%= @student.name %> Learning Results</h3>
+  <hr>
+  <%= @state.results.each do |result| %>
+
+  <% end %>
+</div>

@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
   def new
     @year = Year.find(params[:year_id])
     @student = @year.students.new
+    @state = @student.state
   end
 
   def create
@@ -14,6 +15,7 @@ class StudentsController < ApplicationController
     @student = @year.students.new(student_params)
 
     if @student.save
+      State.create(student_id: @student.id)
       redirect_to year_students_path(@year)
     else
       render :new
