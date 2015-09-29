@@ -1,14 +1,15 @@
 <% content_for :class_list do %>
   <%= link_to 'new student', new_year_student_path(@year) %>
 <% end %>
-<div>
-  <h3>Class <%= @year.number %> Students List</h3>
+
+<div class="col-md-10 col-md-offset-1">
+  <h3>Class <%= @year.number %> <i class="fa fa-angle-double-right"></i> Students List</h3>
   <hr>
-  <table>
+  <table class="table table-bordered table-striped">
     <thead>
-      <th>number</th>
-      <th>name</th>
-      <th>learning state</th>
+      <th width="10%">number</th>
+      <th width="40%">name</th>
+      <th width="20%">learning state</th>
     </thead>
   <% @year.students.each do |student| %>
     <tbody>

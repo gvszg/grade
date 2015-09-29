@@ -1,12 +1,14 @@
 <% content_for :back_class do %>
   <%= link_to 'back_class', year_students_path(@year) %>
+<% end %>
+<%= content_for :add_score do %>
   <%= link_to 'Add new score', new_year_student_state_result_path(@year, @student, @state) %>
 <% end %>
 
-<div>
-  <h3><%= @student.name %> Learning Results</h3>
+<div class="col-md-8 col-md-offset-1">
+  <h3>Class <%= @year.number %> <i class="fa fa-angle-double-right"></i> <%= @student.name %> <i class="fa fa-angle-double-right"></i> Learning Results</h3>
   <hr>
-  <table>
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
       <th>科目</th>

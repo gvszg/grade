@@ -7,14 +7,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav>  
-      <%= link_to 'Root', root_path %>
-      <%= yield :class_list %>
-      <%= yield :back_class %>
-      <%= yield :back_state %>
-    </nav>
-    
-    <%= yield %>
-
+    <div class="container-fluid">
+      <%= render 'shared/navbar' %>
+      <div class="col-md-10 col-md-offset-1">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

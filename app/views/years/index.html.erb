@@ -1,6 +1,22 @@
-<div>
-  <p><%= link_to 'new_class', new_year_path %></p>
-  <% @years.each do |year| %>
-    <%= link_to year.number, year_students_path(year) %>
-  <% end %>
+<% content_for :new_class do %>
+  <%= link_to 'New class', new_year_path %>
+<% end %>
+
+<div class="row col-md-8 col-md-offset-2">
+  <h3>Class List</h3>
+  <hr>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Class Number</th>
+      </tr> 
+    </thead>
+    <tbody>
+      <% @years.each do |year| %>
+      <tr>
+        <td><%= link_to year.number, year_students_path(year) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
