@@ -1,0 +1,17 @@
+<div>
+  <h3><%= @year.number %> Students List</h3>
+  <p><%= link_to 'new student', new_year_student_path(@year) %></p>
+  <hr>
+  <table>
+    <thead>
+      <th>number</th>
+      <th>name</th>
+    </thead>
+  <% @year.students.each do |student| %>
+    <tbody>
+      <td><%= student.number %></td>
+      <td><%= student.name %></td>
+    </tbody>
+  <% end %>
+  </table>
+</div>

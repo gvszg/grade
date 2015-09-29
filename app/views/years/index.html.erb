@@ -1,0 +1,6 @@
+<div>
+  <p><%= link_to 'new_class', new_year_path %></p>
+  <% @years.each do |year| %>
+    <%= link_to year.number, year_students_path(year) %>
+  <% end %>
+</div>

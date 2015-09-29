@@ -1,0 +1,11 @@
+<div>
+  <h3>Add Student</h3>
+  <hr>
+  <%= form_for [@year, @student] do |f| %>
+    <%= f.label :number %><br>
+    <%= f.text_field :number %><br>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.submit %>
+  <% end %>
+</div>

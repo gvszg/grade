@@ -1,0 +1,11 @@
+<div>
+  <table>
+    <%= form_for @year do |f| %>
+      <div class="form-group">
+        <%= f.label :number %>
+        <%= f.text_field :number %>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </table>
+</div>
