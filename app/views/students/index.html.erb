@@ -6,6 +6,10 @@
 <% end %>
 
 <div class="col-md-10 col-md-offset-1">
+  <ol class="breadcrumb">
+    <li><%= link_to 'Home', years_path %></li>
+    <li class="active"><%= @year.number %></li>
+  </ol>  
   <h3>Class <%= @year.number %> <i class="fa fa-angle-double-right"></i> Students List</h3>
   <hr>
   <table class="table table-bordered table-striped">

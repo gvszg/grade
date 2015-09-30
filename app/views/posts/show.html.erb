@@ -2,13 +2,17 @@
   <%= link_to 'Bulletin Board', posts_path %>  
 <% end %>
 
-<div vlass="row">
-  <div>
+<div class="row col-md-offset-1 col-md-8">
+  <ol class="breadcrumb">
+    <li><%= link_to 'Home', posts_path %></li>
+    <li class="active"><%= @post.title %></li>
+  </ol>
+  <div class="well">
   <h3><%= @post.title %></h3>
   <p><%= @post.description %></p>
     <p>
-      <span>posted by</span> <%= @post.creator.name %>
-      <small>at <%= @post.created_at %></small>
+      <span class="quiet">posted by</span> <%= @post.creator.name %>
+      <small>at <%= @post.created_at.to_s(:long) %></small>
     </p>
   </div>
 </div>

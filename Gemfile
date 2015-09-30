@@ -4,7 +4,7 @@ gem 'awesome_print'
 gem 'pry'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
-gem "faker"
+# gem "faker"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'

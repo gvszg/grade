@@ -6,6 +6,11 @@
 <% end %>
 
 <div class="col-md-8 col-md-offset-1">
+  <ol class="breadcrumb">
+    <li><%= link_to 'Home', years_path %></li>
+    <li><%= link_to 'Class', year_students_path(@year) %></li>
+    <li class="active"><%= @student.name %></li>
+  </ol> 
   <h3>Class <%= @year.number %> <i class="fa fa-angle-double-right"></i> <%= @student.name %> <i class="fa fa-angle-double-right"></i> Learning Results</h3>
   <hr>
   <table class="table table-bordered table-hover">

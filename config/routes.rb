@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show]
 
   namespace :admin do
-    resources :users
-    resources :posts
+    resources :users, :posts
   end
 
   resources :years, only:[:index, :new, :create] do

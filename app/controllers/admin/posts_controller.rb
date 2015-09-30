@@ -1,15 +1,20 @@
 class Admin::PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
 
+  def index
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
+    @post.creator = User.first
 
     if @post.save
-      redirect_to posts_path
+      redirect_to admin_posts_path
     else
       render :new
     end
@@ -20,7 +25,7 @@ class Admin::PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      redirect_to admin_posts_path
     else
       render :edit
     end
@@ -28,7 +33,7 @@ class Admin::PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to admin_posts_path
   end
 
   private
