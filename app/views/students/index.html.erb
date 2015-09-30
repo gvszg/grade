@@ -1,5 +1,8 @@
+<% content_for :all_class_list do %>
+  <%= link_to 'All Class List', years_path %>
+<% end %>
 <% content_for :class_list do %>
-  <%= link_to 'new student', new_year_student_path(@year) %>
+  <%= link_to 'Add new student', new_year_student_path(@year) %>
 <% end %>
 
 <div class="col-md-10 col-md-offset-1">

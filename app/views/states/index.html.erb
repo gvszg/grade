@@ -1,8 +1,8 @@
 <% content_for :back_class do %>
-  <%= link_to 'back_class', year_students_path(@year) %>
+  <%= link_to 'Back to Class', year_students_path(@year) %>
 <% end %>
 <%= content_for :add_score do %>
-  <%= link_to 'Add new score', new_year_student_state_result_path(@year, @student, @state) %>
+  <%= link_to 'Add new result', new_year_student_state_result_path(@year, @student, @state) %>
 <% end %>
 
 <div class="col-md-8 col-md-offset-1">

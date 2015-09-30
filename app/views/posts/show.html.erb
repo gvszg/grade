@@ -1,0 +1,14 @@
+<% content_for :posts_index do %>
+  <%= link_to 'Bulletin Board', posts_path %>  
+<% end %>
+
+<div vlass="row">
+  <div>
+  <h3><%= @post.title %></h3>
+  <p><%= @post.description %></p>
+    <p>
+      <span>posted by</span> <%= @post.creator.name %>
+      <small>at <%= @post.created_at %></small>
+    </p>
+  </div>
+</div>

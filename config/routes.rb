@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root 'years#index'
+  root 'posts#index'
+
+  resources :posts, only: [:index, :show]
+
+  namespace :admin do
+    resources :users
+    resources :posts
+  end
 
   resources :years, only:[:index, :new, :create] do
     resources :students do

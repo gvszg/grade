@@ -1,0 +1,12 @@
+<% content_for :all_class_list do %>
+  <%= link_to 'All Class List', years_path %>
+<% end %>
+
+<div class="row">
+  <h3>Bulletin Board</h3>
+
+  <% @posts.each do |post| %>
+    <%= link_to post.title, post_path(post) %>
+    <%= post.created_at %>
+  <% end %>
+</div>
