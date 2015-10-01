@@ -13,6 +13,7 @@
         <th>Title</th>
         <th width="30%">Post created time</th>
         <th width="20%">Post creator</th>
+        <th>Option</th>
       </tr>
     </thead>
     <% @posts.each do |post| %>
@@ -21,6 +22,7 @@
           <td><%= link_to post.title, post_path(post) %></td>
           <td><%= post.created_at.to_s(:long) %></td>
           <td><%= post.creator.name %></td>
+          <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
         </tr>
       </tbody>
     <% end %>
