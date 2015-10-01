@@ -1,12 +1,12 @@
 <div class="row col-md-offset-1 col-md-7">
   <ol class="breadcrumb">
-    <li><%= link_to 'Home', admin_posts_path %></li>
-    <li class="active">Add new post</li>
+    <li><%= link_to 'Home', posts_path %></li>
+    <li class="active">Edit post</li>
   </ol>
-  <h3>New Post</h3>
+  <h3>Edit Post</h3>
   <hr>
   <form>
-    <%= form_for [:admin, @post] do |f| %>
+    <%= form_for @post do |f| %>
       <div class="form-group">
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control' %>
