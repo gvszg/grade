@@ -2,7 +2,7 @@
   <%= link_to 'Back to Class', year_students_path(@year) %>
 <% end %>
 
-<div class="col-md-8 col-md-offset-1">
+<div class="col-md-8">
   <h3>Class <%= @year.number %> <i class="fa fa-angle-double-right"></i> Add Student</h3>
   <hr>
   <%= form_for [@year, @student] do |f| %>

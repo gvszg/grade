@@ -1,11 +1,11 @@
 <% content_for :all_class_list do %>
-  <%= link_to 'All Class List', years_path %>
+  <%= link_to 'All Classes', years_path %>
 <% end %>
 <% content_for :new_post do %>
   <%= link_to 'New Post', new_post_path %>
 <% end %>
 
-<div class="row col-md-offset-1 col-md-8">
+<div class="row col-md-8">
   <h3>Bulletin Board</h3>
   <table class="table table-bordered">
     <thead>
@@ -13,7 +13,6 @@
         <th>Title</th>
         <th width="30%">Post created time</th>
         <th width="20%">Post creator</th>
-        <th>Option</th>
       </tr>
     </thead>
     <% @posts.each do |post| %>
@@ -22,10 +21,6 @@
           <td><%= link_to post.title, post_path(post) %></td>
           <td><%= post.created_at.to_s(:long) %></td>
           <td><%= post.creator.name %></td>
-          <td>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %>
-          </td>
         </tr>
       </tbody>
     <% end %>

@@ -1,8 +1,14 @@
 <% content_for :posts_index do %>
   <%= link_to 'Bulletin Board', posts_path %>  
 <% end %>
+<% content_for :edit_post do %>
+  <%= link_to 'Edit', edit_post_path(@post) %>  
+<% end %>
+<% content_for :delete_post do %>
+  <%= link_to 'Delet', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>  
+<% end %>
 
-<div class="row col-md-offset-1 col-md-8">
+<div class="row col-md-8">
   <ol class="breadcrumb">
     <li><%= link_to 'Home', posts_path %></li>
     <li class="active"><%= @post.title %></li>
