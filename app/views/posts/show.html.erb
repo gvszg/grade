@@ -20,11 +20,13 @@
        <span class="quiet">posted by</span> <%= @post.creator.name %>
       <small>at <%= @post.created_at.to_s(:long) %></small>
     </p>
-    <p>      
-      <%= link_to check_post_path(@post, check: true), method: :post do %>
-        <button class="btn btn-warning btn-sm">checked</button>
-      <% end %>      
-    </p>
+    <% if logged_in? %>
+      <p>      
+        <%= link_to check_post_path(@post, check: true), method: :post do %>
+          <button class="btn btn-warning btn-sm">checked</button>
+        <% end %>      
+      </p>
+    <% end %>  
   </div>
   <hr>
   <div class="well">

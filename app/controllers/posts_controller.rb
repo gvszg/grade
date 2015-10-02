@@ -49,8 +49,14 @@ class PostsController < ApplicationController
   end
 
   def check
-    Check.create(checkable: @post, creator: current_user, check: params[:check])
-    flash[:notice] = "You have checked the post!"
+    check = Check.create(checkable: @post, creator: current_user, check: params[:check])
+    
+    if check.valid?
+      flash[:notice] = "You checked the post!"  
+    else
+      flash[:danger] = "You have already checked the post!"
+    end
+    
     redirect_to :back
   end
 
