@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :check]
   before_action :require_user, except: [:index, :show]
   before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
 
@@ -46,6 +46,12 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def check
+    Check.create(checkable: @post, creator: current_user, check: params[:check])
+    flash[:notice] = "You have checked the post!"
+    redirect_to :back
   end
 
   private

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001024539) do
+ActiveRecord::Schema.define(version: 20151002063358) do
+
+  create_table "checks", force: :cascade do |t|
+    t.boolean  "check"
+    t.integer  "user_id"
+    t.integer  "checkable_id"
+    t.string   "checkable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

@@ -20,5 +20,20 @@
        <span class="quiet">posted by</span> <%= @post.creator.name %>
       <small>at <%= @post.created_at.to_s(:long) %></small>
     </p>
+    <p>      
+      <%= link_to check_post_path(@post, check: true), method: :post do %>
+        <button class="btn btn-warning btn-sm">checked</button>
+      <% end %>      
+    </p>
+  </div>
+  <hr>
+  <div class="well">
+    <h4>Viewed Record</h4>
+    <span>Checked by</span>
+    <ul>
+      <% @post.checks.each do |check| %>
+        <li><%= check.creator.name %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
