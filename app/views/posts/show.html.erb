@@ -8,10 +8,10 @@
     <li class="active"><%= @post.title %></li>
   </ol>
   <div class="well">
-  <h3><%= @post.title %></h3>
-  <p><%= @post.description %></p>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.description %></p>
     <p>
-      <span class="quiet">posted by</span> <%= @post.creator.name %>
+       <span class="quiet">posted by</span> <%= @post.creator.name %>
       <small>at <%= @post.created_at.to_s(:long) %></small>
     </p>
   </div>

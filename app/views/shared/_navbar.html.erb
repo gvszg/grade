@@ -9,14 +9,22 @@
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to 'Root', root_path %></li>
         <li><%= yield :posts_index %></li>
+        <% if logged_in? && current_user.admin? %>
         <li><%= yield :new_class %></li>
-        <li><%= yield :all_class_list %></li>
         <li><%= yield :class_list %></li>
+        <% end %>
+        <li><%= yield :all_class_list %></li>
+        
         <li><%= yield :back_class %></li>
         <li><%= yield :back_state %></li>
         <li><%= yield :add_score %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Log in', login_path %></li>  
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

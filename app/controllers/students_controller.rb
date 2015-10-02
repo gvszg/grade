@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+  before_action :require_user
+  before_action :require_admin, only: [:new, :create]
+
   def index
     @year = Year.find(params[:year_id])
     @students = @year.students.all.order('number ASC')

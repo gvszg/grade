@@ -1,4 +1,7 @@
 class YearsController < ApplicationController
+  before_action :require_user
+  before_action :require_admin, only: [:new, :create]
+
   def index
     @years = Year.all.order('number ASC')
   end

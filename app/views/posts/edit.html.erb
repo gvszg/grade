@@ -5,17 +5,5 @@
   </ol>
   <h3>Edit Post</h3>
   <hr>
-  <form>
-    <%= form_for @post do |f| %>
-      <div class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :description %>
-        <%= f.text_area :description, rows: 5, class: 'form-control' %>
-      </div>
-      <%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <% end %>
-  </form>
+  <%= render 'form' %>
 </div>

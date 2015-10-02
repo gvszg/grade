@@ -1,13 +1,11 @@
 <div class="col-md-8 col-md-offset-1">
   <h3>New Class</h3>
   <hr>
-  <table>
-    <%= form_for @year do |f| %>
-      <div class="form-group">
-        <%= f.label :number %>
-        <%= f.text_field :number, class: "form-control", style: 'width: 50%;' %>
-      </div>  
-      <%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <% end %>
-  </table>
+  <%= form_for @year do |f| %>
+    <div class="form-group">
+      <%= f.label :number %>
+      <%= f.text_field :number, class: "form-control", style: 'width: 50%;' %>
+    </div>  
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <% end %>
 </div>

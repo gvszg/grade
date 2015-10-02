@@ -1,7 +1,6 @@
 <div class="col-md-6 col-md-offset-1">
   <h3>Log in</h3>
   <hr>
-  <form>
     <%= form_tag '/login' do %>
       <div class="form-group">
         <%= label_tag :name %>
@@ -13,5 +12,4 @@
       </div>
       <%= submit_tag 'Submit', class: "btn btn-success" %>
     <% end %>
-  </form>
 </div>
