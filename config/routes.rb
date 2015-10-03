@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/register', to: 'users#new'
 
   resources :posts do
     member do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users, only: [:show, :create, :edit, :update]
 
   resources :years, only:[:index, :new, :create] do
     resources :students do
